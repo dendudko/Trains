@@ -1,9 +1,6 @@
-import flask
-import pandas
-import openpyxl
+from flask import render_template
 
 from app import app
-from flask import render_template, request, session
 from ontology.main import *
 
 

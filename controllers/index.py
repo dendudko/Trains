@@ -70,7 +70,3 @@ def index():
         train_types=train_types,
     )
     return html
-
-# res = call_gen_schedule(ontology_of_knowledge, ontology_of_reality)
-#     if type(res) != pandas.DataFrame:
-#         print(res)
