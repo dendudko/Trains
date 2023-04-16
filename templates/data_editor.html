@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Расписание поездов</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/table.css"/>
+
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href={{ url_for("index") }}>Редактор знаний</a></li>
+            <li><a class='active' href={{ url_for("data_editor") }}>Редактор данных</a></li>
+            <li><a href="{{ url_for("problem_solver") }}">Решатель задач</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div>
+    <h2>База поездов:</h2>
+
+    <form>
+        <label for="train-number">Номер поезда:</label>
+        <input style="width: 60px;" type="text" id="train-number" name="train-number" required>
+
+        <label for="train-type">Тип поезда:</label>
+        <select style="width: 185px;" id="train-type" name="train-type" required>
+            <option value="" disabled>Выберите</option>
+            {% for train in train_types %}
+                <option value="{{ loop.index - 1 }}">
+                    {{ train.train_type_name }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <label for="distance">Дальность следования:</label>
+        <input style="width: 80px;" type="text" id="distance" name="distance" required>
+        <label for="speed">Скорость поезда:</label>
+        <input style="width: 80px;" type="text" id="speed" name="speed" required>
+        <input type="submit" class="button" id="addTrain" name='addTrain' value="Добавить">
+        <input type="submit" class="button" id="delTrain" name='delTrain' value="Удалить">
+    </form>
+
+    <div class="container">
+        <table class="fixed-table">
+            <thead>
+            <tr>
+                <th>Номер поезда</th>
+                <th>Тип поезда</th>
+                <th>Дальность следования</th>
+                <th>Скорость поезда</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for train in trains %}
+                <tr>
+                    <td>{{ train.train_name }}</td>
+                    <td>{{ train.train_type.train_type_name }}</td>
+                    <td>{{ train.train_distance }} км</td>
+                    <td>{{ train.train_speed }} км/ч</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div>
+    <h2>База маршрутов поездок:</h2>
+
+    <form>
+        <label for="route">Маршруты поездок:</label>
+        <select id="route" name="route" required>
+            <option value="" disabled>Выберите маршрут</option>
+            {% for route in all_routes %}
+                <option value={{ loop.index - 1 }}>
+                    {{ route.start_city }} - {{ route.end_city }} ({{ route.distance }} км)
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" class="button" id='addTravelTrip' name='addTravelTrip' value="Добавить">
+        <input type="submit" class="button" id='delTravelTrip' name='delTravelTrip' value="Удалить">
+    </form>
+    <div class="container">
+        <table class="fixed-table">
+            <thead>
+            <tr>
+                <th>Маршруты поездок</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for route in current_routes %}
+                <tr>
+                    <td>{{ route.start_city }} - {{ route.end_city }} ({{ route.distance }} км)</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{#<div>#}
+{#    <form>#}
+{#        <label for="route">Маршрут поездки:</label>#}
+{#        <select id="route" name="route">#}
+{#            <option value="route1">Маршрут 1</option>#}
+{#            <option value="route2">Маршрут 2</option>#}
+{#            <option value="route3">Маршрут 3</option>#}
+{#        </select>#}
+{#        <label for="start-time">Начало поездки:</label>#}
+{#        <input type="datetime-local" id="start-time" name="start-time">#}
+{#        <label for="end-time">Конец поездки:</label>#}
+{#        <input type="datetime-local" id="end-time" name="end-time">#}
+{#        <button type="submit">Добавить</button>#}
+{#    </form>#}
+{#</div>#}
+
+
+</body>
+</html>

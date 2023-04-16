@@ -1,0 +1,33 @@
+.fixed-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fixed-table th, .fixed-table td {
+    padding: 10px;
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.fixed-table thead {
+    position: sticky;
+    top: -1px;
+}
+
+.fixed-table th {
+    font-weight: bold;
+    color: #333;
+    background-color: #ddd;
+}
+
+.fixed-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.container {
+    overflow-y: scroll;
+    height: 250px;
+    min-width: 100%;
+}
