@@ -46,6 +46,8 @@ class Schedule:
                                   route_i.start_city == start_city]
                     potential_routes = []
                     for city_time in city_times:
+                        if len(routes) == 0:
+                            break
                         route_index = random.randint(0, len(routes) - 1)
                         potential_routes.append(TrainRoute(train, routes[route_index], city_time))
 
