@@ -29,5 +29,5 @@
 .container {
     overflow-y: scroll;
     height: 250px;
-    min-width: 100%;
+    width: 98.5%;
 }

@@ -37,9 +37,9 @@
         </select>
 
         <label for="distance">Дальность следования:</label>
-        <input style="width: 80px;" type="text" id="distance" name="distance" required>
+        <input style="width: 80px;" type="number" min=0 id="distance" name="distance" required>
         <label for="speed">Скорость поезда:</label>
-        <input style="width: 80px;" type="text" id="speed" name="speed" required>
+        <input style="width: 80px;" type="number" min=0 id="speed" name="speed" required>
         <input type="submit" class="button" id="addTrain" name='addTrain' value="Добавить">
         <input type="submit" class="button" id="delTrain" name='delTrain' value="Удалить">
     </form>

@@ -55,7 +55,7 @@
         <label for="arrival">Место прибытия:</label>
         <input type="text" id="arrival" name="arrival" required>
         <label for="distance">Дальность поездки:</label>
-        <input style="width: 80px;" type="text" id="distance" name="distance" required>
+        <input style="width: 80px;" type="number" min=0 id="distance" name="distance" required>
         <input type="submit" class="button" id="addRoute" name='addRoute' value="Добавить">
         <input type="submit" class="button" id="delRoute" name='delRoute' value="Удалить">
     </form>
@@ -89,11 +89,11 @@
         <label for="trainType">Тип поезда:</label>
         <input style="width: 150px;" type="text" id="trainType" name="trainType" required>
         <label for="speed">Скорость движения:</label>
-        <input style="width: 80px;margin-right: 0;" type="text" id="speedFrom" name="speedFrom" required>
-        <input style="width: 80px;" type="text" id="speedTo" name="speedTo" required>
+        <input style="width: 80px;margin-right: 0;" type="number" min=0 id="speedFrom" name="speedFrom" required>
+        <input style="width: 80px;" type="number" min=0 id="speedTo" name="speedTo" required>
         <label for="range">Дальность следования:</label>
-        <input style="width: 80px;margin-right: 0;" type="text" id="rangeFrom" name="rangeFrom" required>
-        <input style="width: 80px;" type="text" id="rangeTo" name="rangeTo" required>
+        <input style="width: 80px;margin-right: 0;" type="number" min=0 id="rangeFrom" name="rangeFrom" required>
+        <input style="width: 80px;" type="number" min=0 id="rangeTo" name="rangeTo" required>
         <input type="submit" class="button" id="addTrainType" name='addTrainType' value="Добавить">
         <input type="submit" class="button" id="delTrainType" name='delTrainType' value="Удалить">
 

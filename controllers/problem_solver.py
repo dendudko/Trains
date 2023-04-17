@@ -1,3 +1,4 @@
+import flask
 from flask import render_template
 
 from app import app
@@ -18,6 +19,7 @@ def problem_solver():
     errors = ''
     if type(result) == str:
         errors = result
+        errors = flask.Markup(errors.replace('\n', '<br>'))
         result = pandas.DataFrame()
         result1 = pandas.DataFrame()
     else:

@@ -29,11 +29,14 @@ def Check(ook: OntologyOfKnowledge, oor: OntologyOfReality):
                                 f'{ook.routes[i].end_city} {ook.routes[i].distance} дублируется.\n'
     for route in ook.routes:
         if route.start_city not in ook.cities:
-            check_result += f'Ошибка в области знаний! Город {route.start_city} не входит в множество городов: {ook.cities}.\n'
+            check_result += f'Ошибка в области знаний! Город {route.start_city} не входит в множество городов: {ook.cities} ' \
+                            f'(маршрут {route.start_city} -> {route.end_city} {route.distance}).\n'
         if route.end_city not in ook.cities:
-            check_result += f'Ошибка в области знаний! Город {route.end_city} не входит в множество городов: {ook.cities}.\n'
+            check_result += f'Ошибка в области знаний! Город {route.end_city} не входит в множество городов: {ook.cities} ' \
+                            f'(маршрут {route.start_city} -> {route.end_city} {route.distance}).\n'
         if route.start_city == route.end_city:
-            check_result += f'Ошибка в области знаний! Начало маршрута = конец маршрута ({route.start_city} = {route.end_city}).\n'
+            check_result += f'Ошибка в области знаний! Начало маршрута = конец маршрута ({route.start_city} = {route.end_city}) ' \
+                            f'(маршрут {route.start_city} -> {route.end_city} {route.distance}).\n'
         if route.distance == 0:
             check_result += f'Ошибка в области знаний! Для маршрута {route.start_city} -> {route.end_city} дальность маршрута = 0.\n'
 
