@@ -36,10 +36,10 @@
             {% endfor %}
         </select>
 
-        <label for="distance">Дальность следования:</label>
-        <input style="width: 80px;" type="number" min=0 id="distance" name="distance" required>
         <label for="speed">Скорость поезда:</label>
         <input style="width: 80px;" type="number" min=0 id="speed" name="speed" required>
+        <label for="distance">Дальность следования:</label>
+        <input style="width: 80px;" type="number" min=0 id="distance" name="distance" required>
         <input type="submit" class="button" id="addTrain" name='addTrain' value="Добавить">
         <input type="submit" class="button" id="delTrain" name='delTrain' value="Удалить">
     </form>
@@ -50,8 +50,8 @@
             <tr>
                 <th>Номер поезда</th>
                 <th>Тип поезда</th>
-                <th>Дальность следования</th>
                 <th>Скорость поезда</th>
+                <th>Дальность следования</th>
 
             </tr>
             </thead>
@@ -60,8 +60,8 @@
                 <tr>
                     <td>{{ train.train_name }}</td>
                     <td>{{ train.train_type.train_type_name }}</td>
-                    <td>{{ train.train_distance }} км</td>
                     <td>{{ train.train_speed }} км/ч</td>
+                    <td>{{ train.train_distance }} км</td>
                 </tr>
             {% endfor %}
             </tbody>
