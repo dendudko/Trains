@@ -11,7 +11,7 @@ def Check(ook: OntologyOfKnowledge, oor: OntologyOfReality):
     # Проверяем область знаний
     check_result = ''
     if len(ook.cities) < 2:
-        check_result += f'Ошибка в области знаний! Количество городов = {len(ook.cities)} < 2.\n'
+        check_result += f'Ошибка в области знаний! Количество городов: {len(ook.cities)} < 2.\n'
     else:
         for i in range(len(ook.cities) - 1):
             for j in range(i + 1, len(ook.cities)):
